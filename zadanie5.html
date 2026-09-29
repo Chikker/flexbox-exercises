@@ -5,37 +5,89 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zadanie 5 - Ćwiczenie z justify-content</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 30px;
       font-family: Arial, sans-serif;
-      background: #f5f5f5;
+      background: linear-gradient(135deg, #f97316, #facc15, #fef3c7);
+      color: #1f2937;
+    }
+
+    .topbar {
+      background: rgba(31, 41, 55, 0.6);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #fbbf24;
+      border-color: #fbbf24;
+      color: #111827;
+      transform: translateY(-2px);
+    }
+
+    .wrap {
+      padding: 30px;
     }
 
     .example {
       width: 800px;
+      max-width: 100%;
       height: 120px;
       display: flex;
-      border: 2px solid #333;
-      margin: 20px auto;
-      background: #ddd;
+      border: 3px solid #1f2937;
+      margin: 22px auto;
+      background: rgba(255,255,255,0.35);
+      border-radius: 14px;
+      padding: 0 10px;
     }
 
     .box {
       width: 80px;
       height: 80px;
-      margin: 10px;
+      margin: 20px 10px;
       display: flex;
       justify-content: center;
       align-items: center;
-      color: #fff;
+      color: white;
       font-weight: bold;
+      border-radius: 14px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
     }
 
-    .a { background: red; }
-    .b { background: blue; }
-    .c { background: green; }
-    .d { background: orange; }
+    .a { background: #ef4444; }
+    .b { background: #3b82f6; }
+    .c { background: #22c55e; }
+    .d { background: #f59e0b; }
 
     .start { justify-content: flex-start; }
     .end { justify-content: flex-end; }
@@ -46,63 +98,85 @@
 
     p {
       max-width: 900px;
-      margin: 20px auto;
-      line-height: 1.6;
-      font-size: 1rem;
+      margin: 30px auto;
+      line-height: 1.7;
+      font-size: 1.05rem;
+      background: rgba(255,255,255,0.35);
+      padding: 18px 22px;
+      border-radius: 12px;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.08);
     }
   </style>
 </head>
 <body>
-  <div class="example start">
-    <div class="box a">1</div>
-    <div class="box b">2</div>
-    <div class="box c">3</div>
-    <div class="box d">4</div>
+  <div class="topbar">
+    <div class="brand">Flexbox</div>
+    <nav class="nav">
+      <a href="zadanie1.html">1</a>
+      <a href="zadanie2.html">2</a>
+      <a href="zadanie3.html">3</a>
+      <a href="zadanie4.html">4</a>
+      <a href="zadanie5.html" class="active">5</a>
+      <a href="zadanie6.html">6</a>
+      <a href="zadanie7.html">7</a>
+      <a href="zadanie8.html">8</a>
+      <a href="zadanie9.html">9</a>
+      <a href="zadanie10.html">10</a>
+    </nav>
   </div>
 
-  <div class="example end">
-    <div class="box a">1</div>
-    <div class="box b">2</div>
-    <div class="box c">3</div>
-    <div class="box d">4</div>
-  </div>
+  <div class="wrap">
+    <div class="example start">
+      <div class="box a">1</div>
+      <div class="box b">2</div>
+      <div class="box c">3</div>
+      <div class="box d">4</div>
+    </div>
 
-  <div class="example center">
-    <div class="box a">1</div>
-    <div class="box b">2</div>
-    <div class="box c">3</div>
-    <div class="box d">4</div>
-  </div>
+    <div class="example end">
+      <div class="box a">1</div>
+      <div class="box b">2</div>
+      <div class="box c">3</div>
+      <div class="box d">4</div>
+    </div>
 
-  <div class="example between">
-    <div class="box a">1</div>
-    <div class="box b">2</div>
-    <div class="box c">3</div>
-    <div class="box d">4</div>
-  </div>
+    <div class="example center">
+      <div class="box a">1</div>
+      <div class="box b">2</div>
+      <div class="box c">3</div>
+      <div class="box d">4</div>
+    </div>
 
-  <div class="example around">
-    <div class="box a">1</div>
-    <div class="box b">2</div>
-    <div class="box c">3</div>
-    <div class="box d">4</div>
-  </div>
+    <div class="example between">
+      <div class="box a">1</div>
+      <div class="box b">2</div>
+      <div class="box c">3</div>
+      <div class="box d">4</div>
+    </div>
 
-  <div class="example evenly">
-    <div class="box a">1</div>
-    <div class="box b">2</div>
-    <div class="box c">3</div>
-    <div class="box d">4</div>
-  </div>
+    <div class="example around">
+      <div class="box a">1</div>
+      <div class="box b">2</div>
+      <div class="box c">3</div>
+      <div class="box d">4</div>
+    </div>
 
-  <p>
-    <strong>Różnice:</strong><br>
-    - <strong>flex-start</strong> — pozycje przy lewej krawędzi<br>
-    - <strong>flex-end</strong> — pozycje przy prawej krawędzi<br>
-    - <strong>center</strong> — wyśrodkowanie w poziomie<br>
-    - <strong>space-between</strong> — odstępy między elementami, bez marginesów na końcach<br>
-    - <strong>space-around</strong> — odstępy po obu stronach każdego elementu<br>
-    - <strong>space-evenly</strong> — równe odstępy między wszystkimi elementami i krawędziami
-  </p>
+    <div class="example evenly">
+      <div class="box a">1</div>
+      <div class="box b">2</div>
+      <div class="box c">3</div>
+      <div class="box d">4</div>
+    </div>
+
+    <p>
+      <strong>Różnice:</strong><br>
+      - <strong>flex-start</strong> — przy lewej krawędzi<br>
+      - <strong>flex-end</strong> — przy prawej krawędzi<br>
+      - <strong>center</strong> — wyśrodkowanie w poziomie<br>
+      - <strong>space-between</strong> — równe odstępy między elementami<br>
+      - <strong>space-around</strong> — odstępy po obu stronach każdego elementu<br>
+      - <strong>space-evenly</strong> — jednakowe odstępy między elementami i krawędziami
+    </p>
+  </div>
 </body>
 </html>

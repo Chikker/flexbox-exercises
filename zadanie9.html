@@ -5,36 +5,100 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zadanie 9 - Zadanie problemowe</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
-      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1f2937, #3b82f6, #93c5fd);
+      color: white;
+      padding: 20px;
+    }
+
+    .topbar {
+      background: rgba(17, 24, 39, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+      border-radius: 0 0 16px 16px;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #93c5fd;
+      border-color: #93c5fd;
+      color: #111827;
+      transform: translateY(-2px);
+    }
+
+    main {
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
-      gap: 20px;
-      font-family: Arial, sans-serif;
-      background: #f0f0f0;
+      gap: 24px;
+      padding: 30px 0;
+    }
+
+    .section-box {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.14);
+      text-align: center;
+    }
+
+    h3 {
+      margin: 0 0 16px;
+      font-size: 1.6rem;
     }
 
     section {
       display: flex;
-      gap: 10px;
+      gap: 12px;
       padding: 20px;
-      background: #fff;
-      border: 2px solid #000;
+      border-radius: 16px;
+      background: rgba(255,255,255,0.08);
+      flex-wrap: wrap;
+      justify-content: center;
     }
 
     .box {
-      width: 120px;
-      height: 120px;
-      border: 2px solid black;
+      width: 110px;
+      height: 110px;
+      border: 3px solid white;
       display: flex;
       justify-content: center;
       align-items: center;
       font-size: 2rem;
       font-weight: bold;
-      background: #ddd;
+      background: linear-gradient(135deg, #fbbf24, #f97316);
+      border-radius: 12px;
     }
 
     .a { flex-direction: row; }
@@ -46,50 +110,78 @@
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 500px;
-      width: 500px;
+      height: 440px;
+      width: 440px;
     }
   </style>
 </head>
 <body>
-  <h2>A) 1 2 3 4</h2>
-  <section class="a">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </section>
+  <div class="topbar">
+    <div class="brand">Flexbox</div>
+    <nav class="nav">
+      <a href="zadanie1.html">1</a>
+      <a href="zadanie2.html">2</a>
+      <a href="zadanie3.html">3</a>
+      <a href="zadanie4.html">4</a>
+      <a href="zadanie5.html">5</a>
+      <a href="zadanie6.html">6</a>
+      <a href="zadanie7.html">7</a>
+      <a href="zadanie8.html">8</a>
+      <a href="zadanie9.html" class="active">9</a>
+      <a href="zadanie10.html">10</a>
+    </nav>
+  </div>
 
-  <h2>B) 4 3 2 1</h2>
-  <section class="b">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </section>
+  <main>
+    <div class="section-box">
+      <h3>A) 1 2 3 4</h3>
+      <section class="a">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </section>
+    </div>
 
-  <h2>C) 1 / 2 / 3 / 4</h2>
-  <section class="c">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </section>
+    <div class="section-box">
+      <h3>B) 4 3 2 1</h3>
+      <section class="b">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </section>
+    </div>
 
-  <h2>D) 4 / 3 / 2 / 1</h2>
-  <section class="d">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </section>
+    <div class="section-box">
+      <h3>C) 1 / 2 / 3 / 4</h3>
+      <section class="c">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </section>
+    </div>
 
-  <h2>E) wyśrodkowany układ pionowy</h2>
-  <section class="e">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </section>
+    <div class="section-box">
+      <h3>D) 4 / 3 / 2 / 1</h3>
+      <section class="d">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </section>
+    </div>
+
+    <div class="section-box">
+      <h3>E) wyśrodkowany układ pionowy</h3>
+      <section class="e">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </section>
+    </div>
+  </main>
 </body>
 </html>

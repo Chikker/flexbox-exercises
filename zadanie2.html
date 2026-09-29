@@ -5,14 +5,78 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zadanie 2 - Idealne wyśrodkowanie</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #0f766e, #14b8a6, #a7f3d0);
+      color: #062c2a;
+    }
+
+    .topbar {
+      background: rgba(6, 44, 42, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #facc15;
+      color: #0f172a;
+      border-color: #facc15;
+      transform: translateY(-2px);
+    }
+
+    main {
+      min-height: calc(100vh - 90px);
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: #f2f2f2;
-      font-family: Arial, sans-serif;
+      padding: 30px;
+    }
+
+    .panel {
+      background: rgba(255,255,255,0.72);
+      border: 2px solid rgba(15, 118, 110, 0.2);
+      border-radius: 22px;
+      padding: 40px 35px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.15);
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 24px;
+      font-size: 2rem;
+      color: #0f172a;
     }
 
     section {
@@ -21,31 +85,55 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      gap: 10px;
-      border: 2px solid #000;
-      padding: 20px;
-      background: #eaeaea;
+      gap: 15px;
+      border: 3px solid #0f172a;
+      background: #ecfeff;
+      border-radius: 18px;
+      padding: 24px;
     }
 
     .box {
       width: 150px;
       height: 150px;
-      border: 2px solid black;
+      border: 3px solid #0f172a;
       display: flex;
       justify-content: center;
       align-items: center;
-      font-size: 2rem;
+      font-size: 2.6rem;
       font-weight: bold;
-      background: white;
+      background: linear-gradient(135deg, #34d399, #22c55e);
+      border-radius: 14px;
+      color: #052e16;
     }
   </style>
 </head>
 <body>
-  <section>
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </section>
+  <div class="topbar">
+    <div class="brand">Flexbox</div>
+    <nav class="nav">
+      <a href="zadanie1.html">1</a>
+      <a href="zadanie2.html" class="active">2</a>
+      <a href="zadanie3.html">3</a>
+      <a href="zadanie4.html">4</a>
+      <a href="zadanie5.html">5</a>
+      <a href="zadanie6.html">6</a>
+      <a href="zadanie7.html">7</a>
+      <a href="zadanie8.html">8</a>
+      <a href="zadanie9.html">9</a>
+      <a href="zadanie10.html">10</a>
+    </nav>
+  </div>
+
+  <main>
+    <div class="panel">
+      <h2>Zadanie 2</h2>
+      <section>
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </section>
+    </div>
+  </main>
 </body>
 </html>

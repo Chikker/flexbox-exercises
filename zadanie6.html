@@ -5,26 +5,75 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zadanie 6 - Panel nawigacyjny</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #082f49, #0ea5e9, #7dd3fc);
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
-      background: #ddd;
-      font-family: Arial, sans-serif;
     }
 
-    nav {
-      width: 900px;
-      height: 80px;
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      background: rgba(8, 47, 73, 0.6);
+      backdrop-filter: blur(8px);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      background: #2b2b2b;
-      border-radius: 12px;
+      padding: 18px 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      color: white;
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #38bdf8;
+      border-color: #38bdf8;
+      color: #082f49;
+      transform: translateY(-2px);
+    }
+
+    nav.main-nav {
+      width: 900px;
+      height: 90px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(15, 23, 42, 0.8);
+      border-radius: 18px;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+      margin-top: 90px;
     }
 
     .nav-item {
@@ -36,24 +85,40 @@
       color: white;
       font-weight: bold;
       letter-spacing: 1px;
-      transition: 0.3s;
+      transition: 0.25s;
       cursor: pointer;
     }
 
-    .nav-item:nth-child(1) { background: #ff6b6b; }
-    .nav-item:nth-child(2) { background: #feca57; color: #111; }
-    .nav-item:nth-child(3) { background: #48dbfb; color: #111; }
-    .nav-item:nth-child(4) { background: #1dd1a1; color: #111; }
-    .nav-item:nth-child(5) { background: #c56cf0; }
+    .nav-item:nth-child(1) { background: #ef4444; }
+    .nav-item:nth-child(2) { background: #f59e0b; color: #111827; }
+    .nav-item:nth-child(3) { background: #10b981; color: #111827; }
+    .nav-item:nth-child(4) { background: #8b5cf6; }
+    .nav-item:nth-child(5) { background: #ec4899; }
 
     .nav-item:hover {
-      filter: brightness(1.15);
-      transform: scale(1.02);
+      filter: brightness(1.12);
+      transform: scale(1.03);
     }
   </style>
 </head>
 <body>
-  <nav>
+  <div class="topbar">
+    <div class="brand">Flexbox</div>
+    <nav class="nav">
+      <a href="zadanie1.html">1</a>
+      <a href="zadanie2.html">2</a>
+      <a href="zadanie3.html">3</a>
+      <a href="zadanie4.html">4</a>
+      <a href="zadanie5.html">5</a>
+      <a href="zadanie6.html" class="active">6</a>
+      <a href="zadanie7.html">7</a>
+      <a href="zadanie8.html">8</a>
+      <a href="zadanie9.html">9</a>
+      <a href="zadanie10.html">10</a>
+    </nav>
+  </div>
+
+  <nav class="main-nav">
     <div class="nav-item">STRONA GŁÓWNA</div>
     <div class="nav-item">O NAS</div>
     <div class="nav-item">OFERTA</div>

@@ -5,18 +5,67 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zadanie 7 - Panel kart produktu</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
       font-family: Arial, sans-serif;
-      background: #f1f1f1;
+      background: linear-gradient(135deg, #0f172a, #1d4ed8, #38bdf8);
+      min-height: 100vh;
+      color: white;
+    }
+
+    .topbar {
+      background: rgba(15, 23, 42, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #60a5fa;
+      border-color: #60a5fa;
+      color: #0f172a;
+      transform: translateY(-2px);
+    }
+
+    main {
+      min-height: calc(100vh - 90px);
       display: flex;
       justify-content: center;
       align-items: center;
-      min-height: 100vh;
+      padding: 40px 20px;
     }
 
     .products {
       width: 1100px;
+      max-width: 100%;
       display: flex;
       justify-content: space-between;
       gap: 20px;
@@ -25,73 +74,96 @@
 
     .card {
       width: 240px;
-      background: white;
-      border: 1px solid #ccc;
-      border-radius: 12px;
+      background: rgba(255,255,255,0.11);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 18px;
       padding: 20px;
       text-align: center;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.18);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
     }
 
     .image {
       height: 140px;
-      background: linear-gradient(135deg, #dfe6e9, #b2bec3);
-      border-radius: 8px;
-      margin-bottom: 15px;
+      background: linear-gradient(135deg, #e0f2fe, #93c5fd);
+      border-radius: 12px;
+      margin-bottom: 18px;
     }
 
     h3 {
       margin: 10px 0;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
     }
 
     .price {
       font-size: 1.5rem;
       font-weight: bold;
-      color: #2d3436;
+      color: #fef9c3;
       margin-bottom: 15px;
     }
 
     button {
-      background: #00b894;
+      background: linear-gradient(135deg, #22c55e, #16a34a);
       color: white;
       border: none;
       padding: 12px 20px;
-      border-radius: 8px;
+      border-radius: 10px;
       font-weight: bold;
       cursor: pointer;
     }
   </style>
 </head>
 <body>
-  <section class="products">
-    <article class="card">
-      <div class="image"></div>
-      <h3>Produkt 1</h3>
-      <div class="price">99 zł</div>
-      <button>Kup teraz</button>
-    </article>
+  <div class="topbar">
+    <div class="brand">Flexbox</div>
+    <nav class="nav">
+      <a href="zadanie1.html">1</a>
+      <a href="zadanie2.html">2</a>
+      <a href="zadanie3.html">3</a>
+      <a href="zadanie4.html">4</a>
+      <a href="zadanie5.html">5</a>
+      <a href="zadanie6.html">6</a>
+      <a href="zadanie7.html" class="active">7</a>
+      <a href="zadanie8.html">8</a>
+      <a href="zadanie9.html">9</a>
+      <a href="zadanie10.html">10</a>
+    </nav>
+  </div>
 
-    <article class="card">
-      <div class="image"></div>
-      <h3>Produkt 2</h3>
-      <div class="price">149 zł</div>
-      <button>Kup teraz</button>
-    </article>
+  <main>
+    <section class="products">
+      <article class="card">
+        <div class="image"></div>
+        <h3>Produkt 1</h3>
+        <div class="price">99 zł</div>
+        <button>Kup teraz</button>
+      </article>
 
-    <article class="card">
-      <div class="image"></div>
-      <h3>Produkt 3</h3>
-      <div class="price">199 zł</div>
-      <button>Kup teraz</button>
-    </article>
+      <article class="card">
+        <div class="image"></div>
+        <h3>Produkt 2</h3>
+        <div class="price">149 zł</div>
+        <button>Kup teraz</button>
+      </article>
 
-    <article class="card">
-      <div class="image"></div>
-      <h3>Produkt 4</h3>
-      <div class="price">249 zł</div>
-      <button>Kup teraz</button>
-    </article>
-  </section>
+      <article class="card">
+        <div class="image"></div>
+        <h3>Produkt 3</h3>
+        <div class="price">199 zł</div>
+        <button>Kup teraz</button>
+      </article>
+
+      <article class="card">
+        <div class="image"></div>
+        <h3>Produkt 4</h3>
+        <div class="price">249 zł</div>
+        <button>Kup teraz</button>
+      </article>
+    </section>
+  </main>
 </body>
 </html>

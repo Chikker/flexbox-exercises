@@ -5,53 +5,133 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Zadanie 4 - Układ pionowy</title>
   <style>
+    * { box-sizing: border-box; }
     body {
       margin: 0;
+      font-family: Arial, sans-serif;
       min-height: 100vh;
+      background: linear-gradient(135deg, #111827, #374151, #22c55e);
+      color: white;
+    }
+
+    .topbar {
+      background: rgba(17, 24, 39, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #22c55e;
+      border-color: #22c55e;
+      color: #062c2a;
+      transform: translateY(-2px);
+    }
+
+    main {
+      min-height: calc(100vh - 90px);
       display: flex;
       justify-content: center;
       align-items: center;
       gap: 30px;
-      font-family: Arial, sans-serif;
-      background: #efefef;
+      padding: 30px;
+      flex-wrap: wrap;
     }
 
-    .wrapper {
+    .panel {
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.2);
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 14px 30px rgba(0,0,0,0.2);
+    }
+
+    .stack {
       display: flex;
       flex-direction: column;
-      gap: 10px;
-    }
-
-    .box {
-      width: 150px;
-      height: 150px;
-      border: 2px solid black;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      font-size: 2rem;
-      font-weight: bold;
-      background: white;
+      gap: 12px;
     }
 
     .reverse {
       flex-direction: column-reverse;
     }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      border: 3px solid white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.8rem;
+      font-weight: bold;
+      background: linear-gradient(135deg, #34d399, #22c55e);
+      border-radius: 16px;
+    }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
+  <div class="topbar">
+    <div class="brand">Flexbox</div>
+    <nav class="nav">
+      <a href="zadanie1.html">1</a>
+      <a href="zadanie2.html">2</a>
+      <a href="zadanie3.html">3</a>
+      <a href="zadanie4.html" class="active">4</a>
+      <a href="zadanie5.html">5</a>
+      <a href="zadanie6.html">6</a>
+      <a href="zadanie7.html">7</a>
+      <a href="zadanie8.html">8</a>
+      <a href="zadanie9.html">9</a>
+      <a href="zadanie10.html">10</a>
+    </nav>
   </div>
 
-  <div class="wrapper reverse">
-    <div class="box">1</div>
-    <div class="box">2</div>
-    <div class="box">3</div>
-    <div class="box">4</div>
-  </div>
+  <main>
+    <div class="panel">
+      <div class="stack">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+    </div>
+
+    <div class="panel">
+      <div class="stack reverse">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
