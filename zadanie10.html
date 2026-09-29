@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadanie 10 - Moje hobby</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1f2937, #7c3aed, #ec4899);
+      color: white;
+      padding: 0 0 40px 0;
+    }
+
+    .topbar {
+      background: rgba(17, 24, 39, 0.5);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 30px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .brand {
+      font-size: 1.8rem;
+      font-weight: 700;
+    }
+
+    .nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+    }
+
+    .nav a {
+      text-decoration: none;
+      color: white;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: 10px;
+      padding: 8px 14px;
+      font-weight: bold;
+      transition: 0.25s;
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      background: #f472b6;
+      border-color: #f472b6;
+      color: #1f2937;
+      transform: translateY(-2px);
+    }
+
+    main {
+      max-width: 1300px;
+      margin: 0 auto;
+      padding: 30px 20px;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 40px;
+      text-shadow: 0 4px 16px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 1.6rem;
+      margin: 30px 0 20px;
+      padding-top: 20px;
+      border-top: 2px solid rgba(255,255,255,0.2);
+    }
+
+    .card {
+      width: 250px;
+      min-height: 300px;
+      border-radius: 18px;
+      padding: 24px 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .card:nth-child(1) { background: linear-gradient(135deg, #ef4444, #f97316); }
+    .card:nth-child(2) { background: linear-gradient(135deg, #3b82f6, #06b6d4); }
+    .card:nth-child(3) { background: linear-gradient(135deg, #10b981, #22c55e); }
+    .card:nth-child(4) { background: linear-gradient(135deg, #facc15, #f59e0b); color: #1f2937; }
+
+    .icon {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.22);
+      border: 2px solid rgba(255,255,255,0.8);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2.5rem;
+      margin-bottom: 18px;
+    }
+
+    .card h3 {
+      margin: 10px 0;
+      font-size: 1.7rem;
+    }
+
+    .card p {
+      margin: 0;
+      line-height: 1.6;
+      font-size: 0.96rem;
+    }
+
+    /* FLEX-START */
+    .container-start {
+      display: flex;
+      justify-content: flex-start;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* CENTER */
+    .container-center {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* SPACE-BETWEEN */
+    .container-between {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* SPACE-AROUND */
+    .container-around {
+      display: flex;
+      justify-content: space-around;
+      gap: 20px;
+      flex-wrap: wrap;
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* COLUMN */
+    .container-column {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    /* COLUMN-REVERSE */
+    .container-column-reverse {
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      gap: 20px;
+      background: rgba(255,255,255,0.08);
+      padding: 20px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .description {
+      background: rgba(255,255,255,0.1);
+      padding: 16px 20px;
+      border-radius: 12px;
+      margin-top: 12px;
+      font-size: 0.9rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">Flexbox</div>
+    <nav class="nav">
+      <a href="zadanie1.html">1</a>
+      <a href="zadanie2.html">2</a>
+      <a href="zadanie3.html">3</a>
+      <a href="zadanie4.html">4</a>
+      <a href="zadanie5.html">5</a>
+      <a href="zadanie6.html">6</a>
+      <a href="zadanie7.html">7</a>
+      <a href="zadanie8.html">8</a>
+      <a href="zadanie9.html">9</a>
+      <a href="zadanie10.html" class="active">10</a>
+    </nav>
+  </div>
+
+  <main>
+    <h1>Moje hobby</h1>
+
+    <!-- FLEX-START -->
+    <h2>1. justify-content: flex-start</h2>
+    <div class="container-start">
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>SPORT</h3>
+        <p>Uprawiam sporty, które pomagają mi być sprawnym i pełnym energii.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎵</div>
+        <h3>MUZYKA</h3>
+        <p>Muzyka towarzyszy mi na co dzień i daje ogromną motywację.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎮</div>
+        <h3>GRY</h3>
+        <p>Uwielbiam gry, które rozwijają strategię i pozwalają odpocząć.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>PODRÓŻE</h3>
+        <p>Nowe miejsca i kultury inspirują mnie do nauki i odkrywania świata.</p>
+      </div>
+    </div>
+    <div class="description">
+      <strong>flex-start</strong> — karty są ustawione przy lewej krawędzi kontenera.
+    </div>
+
+    <!-- CENTER -->
+    <h2>2. justify-content: center</h2>
+    <div class="container-center">
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>SPORT</h3>
+        <p>Uprawiam sporty, które pomagają mi być sprawnym i pełnym energii.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎵</div>
+        <h3>MUZYKA</h3>
+        <p>Muzyka towarzyszy mi na co dzień i daje ogromną motywację.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎮</div>
+        <h3>GRY</h3>
+        <p>Uwielbiam gry, które rozwijają strategię i pozwalają odpocząć.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>PODRÓŻE</h3>
+        <p>Nowe miejsca i kultury inspirują mnie do nauki i odkrywania świata.</p>
+      </div>
+    </div>
+    <div class="description">
+      <strong>center</strong> — karty są wyśrodkowane w poziomie kontenera.
+    </div>
+
+    <!-- SPACE-BETWEEN -->
+    <h2>3. justify-content: space-between</h2>
+    <div class="container-between">
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>SPORT</h3>
+        <p>Uprawiam sporty, które pomagają mi być sprawnym i pełnym energii.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎵</div>
+        <h3>MUZYKA</h3>
+        <p>Muzyka towarzyszy mi na co dzień i daje ogromną motywację.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎮</div>
+        <h3>GRY</h3>
+        <p>Uwielbiam gry, które rozwijają strategię i pozwalają odpocząć.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>PODRÓŻE</h3>
+        <p>Nowe miejsca i kultury inspirują mnie do nauki i odkrywania świata.</p>
+      </div>
+    </div>
+    <div class="description">
+      <strong>space-between</strong> — karty są rozproszone tak, aby pierwsza była przy lewej krawędzi, ostatnia przy prawej, a między nimi są równe odstępy.
+    </div>
+
+    <!-- SPACE-AROUND -->
+    <h2>4. justify-content: space-around</h2>
+    <div class="container-around">
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>SPORT</h3>
+        <p>Uprawiam sporty, które pomagają mi być sprawnym i pełnym energii.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎵</div>
+        <h3>MUZYKA</h3>
+        <p>Muzyka towarzyszy mi na co dzień i daje ogromną motywację.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎮</div>
+        <h3>GRY</h3>
+        <p>Uwielbiam gry, które rozwijają strategię i pozwalają odpocząć.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>PODRÓŻE</h3>
+        <p>Nowe miejsca i kultury inspirują mnie do nauki i odkrywania świata.</p>
+      </div>
+    </div>
+    <div class="description">
+      <strong>space-around</strong> — karty mają równe odstępy po obu stronach, co powoduje, że między kartami są większe odstępy niż na krawędziach.
+    </div>
+
+    <!-- COLUMN -->
+    <h2>5. flex-direction: column (pionowy układ)</h2>
+    <div class="container-column">
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>SPORT</h3>
+        <p>Uprawiam sporty, które pomagają mi być sprawnym i pełnym energii.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎵</div>
+        <h3>MUZYKA</h3>
+        <p>Muzyka towarzyszy mi na co dzień i daje ogromną motywację.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎮</div>
+        <h3>GRY</h3>
+        <p>Uwielbiam gry, które rozwijają strategię i pozwalają odpocząć.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>PODRÓŻE</h3>
+        <p>Nowe miejsca i kultury inspirują mnie do nauki i odkrywania świata.</p>
+      </div>
+    </div>
+    <div class="description">
+      <strong>flex-direction: column</strong> — karty są ustawione jeden pod drugim w kolejności: 1, 2, 3, 4 (SPORT, MUZYKA, GRY, PODRÓŻE).
+    </div>
+
+    <!-- COLUMN-REVERSE -->
+    <h2>6. flex-direction: column-reverse (odwrotny układ pionowy)</h2>
+    <div class="container-column-reverse">
+      <div class="card">
+        <div class="icon">⚽</div>
+        <h3>SPORT</h3>
+        <p>Uprawiam sporty, które pomagają mi być sprawnym i pełnym energii.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎵</div>
+        <h3>MUZYKA</h3>
+        <p>Muzyka towarzyszy mi na co dzień i daje ogromną motywację.</p>
+      </div>
+      <div class="card">
+        <div class="icon">🎮</div>
+        <h3>GRY</h3>
+        <p>Uwielbiam gry, które rozwijają strategię i pozwalają odpocząć.</p>
+      </div>
+      <div class="card">
+        <div class="icon">✈️</div>
+        <h3>PODRÓŻE</h3>
+        <p>Nowe miejsca i kultury inspirują mnie do nauki i odkrywania świata.</p>
+      </div>
+    </div>
+    <div class="description">
+      <strong>flex-direction: column-reverse</strong> — karty są ustawione jeden pod drugim w odwrotnej kolejności: 4, 3, 2, 1 (PODRÓŻE, GRY, MUZYKA, SPORT).
+    </div>
+  </main>
+</body>
+</html>
