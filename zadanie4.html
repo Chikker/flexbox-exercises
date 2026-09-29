@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadanie 4 - Układ pionowy</title>
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      font-family: Arial, sans-serif;
+      background: #efefef;
+    }
+
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .box {
+      width: 150px;
+      height: 150px;
+      border: 2px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 2rem;
+      font-weight: bold;
+      background: white;
+    }
+
+    .reverse {
+      flex-direction: column-reverse;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+
+  <div class="wrapper reverse">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+    <div class="box">4</div>
+  </div>
+</body>
+</html>

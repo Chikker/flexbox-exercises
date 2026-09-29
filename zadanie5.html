@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadanie 5 - Ćwiczenie z justify-content</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 30px;
+      font-family: Arial, sans-serif;
+      background: #f5f5f5;
+    }
+
+    .example {
+      width: 800px;
+      height: 120px;
+      display: flex;
+      border: 2px solid #333;
+      margin: 20px auto;
+      background: #ddd;
+    }
+
+    .box {
+      width: 80px;
+      height: 80px;
+      margin: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-weight: bold;
+    }
+
+    .a { background: red; }
+    .b { background: blue; }
+    .c { background: green; }
+    .d { background: orange; }
+
+    .start { justify-content: flex-start; }
+    .end { justify-content: flex-end; }
+    .center { justify-content: center; }
+    .between { justify-content: space-between; }
+    .around { justify-content: space-around; }
+    .evenly { justify-content: space-evenly; }
+
+    p {
+      max-width: 900px;
+      margin: 20px auto;
+      line-height: 1.6;
+      font-size: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="example start">
+    <div class="box a">1</div>
+    <div class="box b">2</div>
+    <div class="box c">3</div>
+    <div class="box d">4</div>
+  </div>
+
+  <div class="example end">
+    <div class="box a">1</div>
+    <div class="box b">2</div>
+    <div class="box c">3</div>
+    <div class="box d">4</div>
+  </div>
+
+  <div class="example center">
+    <div class="box a">1</div>
+    <div class="box b">2</div>
+    <div class="box c">3</div>
+    <div class="box d">4</div>
+  </div>
+
+  <div class="example between">
+    <div class="box a">1</div>
+    <div class="box b">2</div>
+    <div class="box c">3</div>
+    <div class="box d">4</div>
+  </div>
+
+  <div class="example around">
+    <div class="box a">1</div>
+    <div class="box b">2</div>
+    <div class="box c">3</div>
+    <div class="box d">4</div>
+  </div>
+
+  <div class="example evenly">
+    <div class="box a">1</div>
+    <div class="box b">2</div>
+    <div class="box c">3</div>
+    <div class="box d">4</div>
+  </div>
+
+  <p>
+    <strong>Różnice:</strong><br>
+    - <strong>flex-start</strong> — pozycje przy lewej krawędzi<br>
+    - <strong>flex-end</strong> — pozycje przy prawej krawędzi<br>
+    - <strong>center</strong> — wyśrodkowanie w poziomie<br>
+    - <strong>space-between</strong> — odstępy między elementami, bez marginesów na końcach<br>
+    - <strong>space-around</strong> — odstępy po obu stronach każdego elementu<br>
+    - <strong>space-evenly</strong> — równe odstępy między wszystkimi elementami i krawędziami
+  </p>
+</body>
+</html>

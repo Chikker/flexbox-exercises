@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadanie 6 - Panel nawigacyjny</title>
+  <style>
+    body {
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: #ddd;
+      font-family: Arial, sans-serif;
+    }
+
+    nav {
+      width: 900px;
+      height: 80px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #2b2b2b;
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .nav-item {
+      flex: 1;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      font-weight: bold;
+      letter-spacing: 1px;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .nav-item:nth-child(1) { background: #ff6b6b; }
+    .nav-item:nth-child(2) { background: #feca57; color: #111; }
+    .nav-item:nth-child(3) { background: #48dbfb; color: #111; }
+    .nav-item:nth-child(4) { background: #1dd1a1; color: #111; }
+    .nav-item:nth-child(5) { background: #c56cf0; }
+
+    .nav-item:hover {
+      filter: brightness(1.15);
+      transform: scale(1.02);
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <div class="nav-item">STRONA GŁÓWNA</div>
+    <div class="nav-item">O NAS</div>
+    <div class="nav-item">OFERTA</div>
+    <div class="nav-item">GALERIA</div>
+    <div class="nav-item">KONTAKT</div>
+  </nav>
+</body>
+</html>

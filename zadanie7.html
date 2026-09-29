@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zadanie 7 - Panel kart produktu</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f1f1f1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .products {
+      width: 1100px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .card {
+      width: 240px;
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    }
+
+    .image {
+      height: 140px;
+      background: linear-gradient(135deg, #dfe6e9, #b2bec3);
+      border-radius: 8px;
+      margin-bottom: 15px;
+    }
+
+    h3 {
+      margin: 10px 0;
+      font-size: 1.3rem;
+    }
+
+    .price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: #2d3436;
+      margin-bottom: 15px;
+    }
+
+    button {
+      background: #00b894;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 8px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <section class="products">
+    <article class="card">
+      <div class="image"></div>
+      <h3>Produkt 1</h3>
+      <div class="price">99 zł</div>
+      <button>Kup teraz</button>
+    </article>
+
+    <article class="card">
+      <div class="image"></div>
+      <h3>Produkt 2</h3>
+      <div class="price">149 zł</div>
+      <button>Kup teraz</button>
+    </article>
+
+    <article class="card">
+      <div class="image"></div>
+      <h3>Produkt 3</h3>
+      <div class="price">199 zł</div>
+      <button>Kup teraz</button>
+    </article>
+
+    <article class="card">
+      <div class="image"></div>
+      <h3>Produkt 4</h3>
+      <div class="price">249 zł</div>
+      <button>Kup teraz</button>
+    </article>
+  </section>
+</body>
+</html>
